@@ -7,15 +7,20 @@ namespace StringBuilderCs
     {
         static void Main(string[] args)
         {
-            StringBuilder builder = new StringBuilder();
-            builder.Append('-', 10);
-            builder.AppendLine();
-            builder.Append("Header");
-            builder.AppendLine();
-            builder.Append('-', 10);
+            StringBuilder builder = new StringBuilder("Hello World");
+            builder
+                .Append('-', 10)
+                .AppendLine()
+                .Append("Header")
+                .AppendLine()
+                .Append('-', 10)
+                .Replace('-', '+')
+                .Remove(0, 10)
+                .Insert(0, new string('-', 10));
 
+            Console.WriteLine(builder);
 
-            Console.Write(builder);
+            Console.WriteLine("FirstLine: "+builder[0]); 
         }
     }
 }
